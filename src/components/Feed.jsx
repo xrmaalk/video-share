@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import SideBar from "./SideBar";
+import { SideBar, Videos } from "./";
 
 const Feed = () => {
   return (
@@ -21,6 +21,17 @@ const Feed = () => {
         >
           Copyright 2023 KaBOOM
         </Typography>
+      </Box>
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{ color: "#fff" }}
+        >
+          New <span style={{ color: "#FC1503" }}>Videos</span>
+        </Typography>
+        <Videos videos={[]} />
       </Box>
     </Stack>
   );
