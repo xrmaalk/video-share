@@ -18,28 +18,29 @@ const VideoCard = ({
     snippet,
   },
 }) => {
-  console.log(videoId, snippet);
+  // console.log(videoId, snippet);
   return (
     <Card
       sx={{
-        width: { md: "555px", xs: "100%" },
+        width: { md: "400px", xs: "400px" },
         boxShadow: "none",
         borderRadius: "50px",
+        background: "#fff",
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
-          sx={{ width: 555, height: 275 }}
+          sx={{ width: 400, height: 228 }}
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "55px" }}>
+      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "100px" }}>
         <Grid container direction="column">
           <Grid item>
             <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
               <Typography variant="subtitle1" fontWeight="bold" color="#fff">
-                {snippet?.title.slice(0, 35) || demoVideoTitle.slice(0, 60)}
+                {snippet?.title.slice(0, 49) || demoVideoTitle.slice(0, 60)}
               </Typography>
             </Link>
           </Grid>

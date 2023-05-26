@@ -18,6 +18,7 @@ const ChannelCard = ({ channelDetail }) => (
       width: { xs: "100%", md: "555px" },
       height: "326px",
       margin: "auto",
+      marginTop: "-93px",
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
@@ -32,15 +33,16 @@ const ChannelCard = ({ channelDetail }) => (
       >
         <CardMedia
           image={
-            channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture
+            channelDetail?.snippet?.thumbnails?.medium?.url ||
+            demoProfilePicture
           }
           alt={channelDetail?.snippet?.title}
           sx={{
             borderRadius: "50%",
             height: "180px",
             width: "180px",
-
             border: ".25rem solid #e3e3e3",
+            marginTop: 12,
           }}
         />
         <Typography variant="h6" sx={{ mt: "1rem" }}>
@@ -48,10 +50,10 @@ const ChannelCard = ({ channelDetail }) => (
           <CheckCircle sx={{ fontSize: 16, color: "#1e1e", ml: "5px" }} />
         </Typography>
         {channelDetail?.statistics?.subscriberCount && (
-          <Typography variant="h6" sx={{ mt: "1rem", ml: "2rem" }}>
+          <Typography variant="h6" sx={{ mt: "1rem" }}>
             {parseInt(
               channelDetail?.statistics?.subscriberCount
-            ).toLocaleString()}
+            ).toLocaleString()}{" "}
             subscribers
           </Typography>
         )}
