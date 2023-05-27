@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+//eslint-disable-next-line
 import { Params, useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Videos, ChannelCard } from "./";
@@ -8,7 +9,7 @@ const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null);
   const [videos, setVideos] = useState([]);
   const { id } = useParams();
-  console.log(channelDetail, videos);
+  // console.log(channelDetail, videos);
 
   useEffect(() => {
     fetchFromAPI(`channels?part=snippet&id=${id}`).then((data) =>
@@ -30,7 +31,12 @@ const ChannelDetail = () => {
             height: "300px",
           }}
         />
-        <ChannelCard channelDetail={channelDetail} />
+        <ChannelCard channelDetail={channelDetail} marginTop="-110px" />
+      </Box>
+      <Box display="flex" p="2px">
+        /** <Box sx={{ mr: { sm: "100px" } }} />
+        */
+        <Videos videos={videos} />
       </Box>
     </Box>
   );

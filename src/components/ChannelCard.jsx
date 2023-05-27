@@ -7,7 +7,7 @@ import { CheckCircle } from "@mui/icons-material";
 // eslint-disable-next-line
 import { demoProfilePicture } from "../utils/constants";
 
-const ChannelCard = ({ channelDetail }) => (
+const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box
     sx={{
       boxShadow: "none",
@@ -18,7 +18,7 @@ const ChannelCard = ({ channelDetail }) => (
       width: { xs: "100%", md: "555px" },
       height: "326px",
       margin: "auto",
-      marginTop: "-93px",
+      marginTop,
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
@@ -42,7 +42,6 @@ const ChannelCard = ({ channelDetail }) => (
             height: "180px",
             width: "180px",
             border: ".25rem solid #e3e3e3",
-            marginTop: 12,
           }}
         />
         <Typography variant="h6" sx={{ mt: "1rem" }}>
